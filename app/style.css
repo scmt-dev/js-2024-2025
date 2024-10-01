@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100dvh;
+}
+.fade-out {
+    opacity: 0;
+}
+
+.splash {
+    width: 100%;
+    height: 100%;
+    background: #05b586;
+    position: absolute;
+    z-index: 99;
+}
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.grid { display: grid; }
+.gap-2{ gap: 0.5rem; }
+.p-4{ padding: 1.5rem; }
+.px-4{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.item-center{ align-items: center; }
+.justify-center{ justify-content: center; }
+.justify-between{ justify-content: space-between; }
+.text-white{ color: white; }
