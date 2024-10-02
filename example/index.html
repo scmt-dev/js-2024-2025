@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello</title>
+    <style>
+        .box1{
+            background-color: red;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+        }
+    </style>
 </head>
-<body>
+<body id="body">
     <h1>News Update</h1>
     <label for="email">Email:</label>
     <input type="text" id="email">
     <button onclick="checkEmail()">ok</button>
     <h2 id="result"></h2>
+    <input type="color" id="color"
+     onchange="changeBg()">
+     <div id="box1" class="box1"></div>
+
     <script src="app.js"></script>
 </body>
 </html>
