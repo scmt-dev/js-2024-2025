@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Item - Kupa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 md:flex items-center justify-center min-h-screen">
+    <div class="md:bg-white rounded-lg md:shadow-md max-w-lg w-full p-6">
+
+        <!-- Food Image and Details -->
+        <div class="bg-gray-100 rounded-lg mb-4">
+            <img src="https://via.placeholder.com/400x200" alt="Japan Hainanese Sashimi" class="w-full h-48 object-cover rounded-lg">
+        </div>
+
+        <!-- Food Title and Heart Icon -->
+        <div class="flex justify-between items-center mb-2">
+            <div>
+                <h1 class="text-xl font-bold">Japan Hainanese Sashimi</h1>
+                <p class="text-gray-500">Japanese food</p>
+            </div>
+            <button class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><path fill="currentColor" d="M2 6.342a3.375 3.375 0 0 1 6-2.088a3.375 3.375 0 0 1 5.997 2.26c-.063 2.134-1.618 3.76-2.955 4.784a14.4 14.4 0 0 1-2.676 1.61q-.031.015-.05.022l-.014.006l-.004.002h-.002a.75.75 0 0 1-.592.001h-.002l-.004-.003l-.015-.006a6 6 0 0 1-.232-.107a14.4 14.4 0 0 1-2.535-1.557C3.564 10.22 1.999 8.558 1.999 6.38z"/></svg>
+            </button>
+        </div>
+
+        <!-- Quantity and Price -->
+        <div class="flex justify-between items-center mb-4">
+            <div class="flex items-center">
+                <button class="bg-gray-200 p-2 w-10 rounded-full">-</button>
+                <span class="mx-4 text-lg font-semibold">1</span>
+                <button class="bg-green-600 text-white p-2 w-10 rounded-full">+</button>
+            </div>
+            <p class="text-xl font-semibold">$39.99</p>
+        </div>
+
+        <!-- Sauce Section -->
+        <div class="mb-4">
+            <h2 class="text-lg font-semibold mb-2">Sauce</h2>
+            <div class="space-y-2">
+                <label class="flex items-center">
+                    <input type="radio" name="sauce" class="mr-2" checked>
+                    <span class="text-sm">Teriyaki</span>
+                    <span class="ml-auto text-sm text-gray-500">$0</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="radio" name="sauce" class="mr-2">
+                    <span class="text-sm">Yakiniku</span>
+                    <span class="ml-auto text-sm text-gray-500">$0</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Topping Section -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold mb-2">Add a Topping?</h2>
+            <div class="space-y-2">
+                <label class="flex items-center">
+                    <input type="checkbox" name="topping" class="mr-2">
+                    <span class="text-sm">Sausage</span>
+                    <span class="ml-auto text-sm text-gray-500">$3</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" name="topping" class="mr-2">
+                    <span class="text-sm">Egg</span>
+                    <span class="ml-auto text-sm text-gray-500">$2</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button class="w-full bg-green-600 text-white py-2 rounded-md font-semibold">Add to Cart ($41.99)</button>
+    </div>
+</body>
+</html>
