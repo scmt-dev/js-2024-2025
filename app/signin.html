@@ -46,7 +46,7 @@
             </div>
 
             <!-- Login Button -->
-            <button class="w-full bg-green-600 text-white py-2 rounded-md mb-4 font-semibold">Login</button>
+            <button id="btnLogin" type="button" class="w-full bg-green-600 text-white py-2 rounded-md mb-4 font-semibold">Login</button>
 
             <!-- Sign Up Option -->
             <p class="text-center text-gray-500 text-sm">Don't have an account? <a href="signup.html" class="text-green-600 font-semibold">Sign Up</a></p>           
@@ -69,5 +69,53 @@
             Sign in with Apple
         </button>
     </div>
+
+    <script>
+        async function handleSignIn() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const btnLogin = document.getElementById('btnLogin');
+            btnLogin.disabled = true;
+            btnLogin.innerHTML = 'Signing in...';
+
+            if(!email) {
+                alert('Please input email')
+                btnLogin.disabled = false;
+                btnLogin.innerHTML = 'Sign in';
+                return
+            }
+            if(!password) {
+                alert('Please input password')
+                btnLogin.disabled = false;
+                btnLogin.innerHTML = 'Sign in';
+                return
+            }
+            const API = 'https://dummyjson.com/auth/login';
+            const req = await fetch(API, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: email,
+                    password: password
+                })
+            })
+            if(req.status === 200) {
+                // go to home page
+                const userData = await req.json()
+                localStorage.setItem('user', JSON.stringify(userData))
+                window.location.href = 'home.html';
+                return
+            }
+
+            alert('Invalid email or password')
+            btnLogin.disabled = false;
+            btnLogin.innerHTML = 'Sign in';
+        }
+
+        document.getElementById('btnLogin').addEventListener('click', handleSignIn)
+    </script>
+
 </body>
 </html>
