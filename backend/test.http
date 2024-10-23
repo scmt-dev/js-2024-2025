@@ -1,0 +1,24 @@
+### healthcheck
+
+GET http://localhost:4000/healthz HTTP/1.1
+
+###  signup
+
+POST http://localhost:4000/signup HTTP/1.1
+content-type: application/json
+
+{
+    "email": "test@email.com",
+    "name": "test",
+    "password": "test"
+}
+
+### signin
+
+POST http://localhost:4000/signin HTTP/1.1
+content-type: application/json
+
+{
+    "email": "test@email.com",
+    "password": "test"
+}

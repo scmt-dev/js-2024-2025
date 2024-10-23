@@ -6,3 +6,22 @@
 - config .env
 
 ```
+
+
+```bash
+npm install
+
+npm run start
+
+
+# migration
+
+npm run migrate
+
+
+# test
+
+npm run test
+
+
+```

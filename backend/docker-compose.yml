@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   mysql:
-    image: mysql:7.5  # You can change this to any version you prefer
+    platform: linux/x86_64
+    image: mysql:5.7  # You can change this to any version you prefer
     container_name: mysql_container
     environment:
       MYSQL_ROOT_PASSWORD: root_password  # Set your root password

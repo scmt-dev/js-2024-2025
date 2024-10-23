@@ -1,0 +1,83 @@
+{
+    "info": {
+      "name": "Auth API",
+      "_postman_id": "abcd1234-abcd-1234-abcd-1234abcd5678",
+      "description": "Collection for testing signup, signin, and protected routes.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Signup",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"name\": \"John Doe\", \"email\": \"john.doe@example.com\", \"password\": \"password123\", \"role\": \"user\"}"
+          },
+          "url": {
+            "raw": "http://localhost:4000/signup",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "4000",
+            "path": ["signup"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Signin",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"email\": \"john.doe@example.com\", \"password\": \"password123\"}"
+          },
+          "url": {
+            "raw": "http://localhost:4000/signin",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "4000",
+            "path": ["signin"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Protected Route",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:4000/protected",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "4000",
+            "path": ["protected"]
+          }
+        },
+        "response": []
+      }
+    ],
+    "event": []
+  }
+  
