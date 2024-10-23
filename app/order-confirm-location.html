@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location - Kupa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 md:flex items-center justify-center min-h-screen">
+    <div class="md:bg-white md:rounded-lg md:shadow-md md:max-w-md w-full">
+
+        <!-- Location Header -->
+        <div class="px-4">
+            <div class="flex gap-4 items-center py-4">
+                <button class="text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <h1 class="text-xl font-bold">Location</h1>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="rounded-md mb-4 p-4 h-48">
+            <img src="https://assets-global.website-files.com/63483ad423421bd16e7a7ae7/639992fc49dddb018cc0a160_vector-data.jpeg" alt="Map showing location" class="w-full h-full object-cover rounded-md">
+        </div>
+
+        <!-- Detail Address Section -->
+        <div class=" p-6 rounded-t-lg">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-semibold">Detail Address</h2>
+                <button class="text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Address -->
+            <div class="flex items-center mb-4">
+                <div class="flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.134 2 5 5.134 5 9c0 4.201 4.528 7.89 6.621 10.624A.998.998 0 0012 20a.998.998 0 00.379-.376C14.471 16.89 19 13.201 19 9c0-3.866-3.134-7-7-7z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="font-semibold">Utama Street No.20</p>
+                    <p class="text-gray-500 text-sm">Dumbo Street No.20, Dumbo, New York 10001, United States of America</p>
+                </div>
+            </div>
+
+            <!-- Change Button -->
+            <button class="bg-gray-200 text-green-600 px-4 py-2 rounded-md font-semibold mb-4">Change</button>
+
+            <!-- Save Address As -->
+            <div class="mb-6">
+                <h2 class="text-lg font-semibold mb-2">Save Address As</h2>
+                <div class="flex space-x-2">
+                    <button class="px-4 py-2 rounded-md border text-green-600 border-green-600">Home</button>
+                    <button class="px-4 py-2 rounded-md border text-gray-500 border-gray-300">Offices</button>
+                    <button class="px-4 py-2 rounded-md border text-gray-500 border-gray-300">Others</button>
+                </div>
+            </div>
+
+            <!-- Confirmation Button -->
+            <button class="w-full bg-green-600 text-white py-2 rounded-md font-semibold">Confirmation</button>
+        </div>
+    </div>
+</body>
+</html>

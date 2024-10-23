@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Kupa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white h-dvh">
+    <div class="h-full px-4 py-6">
+        <!-- Status bar -->
+       
+        <!-- Menu Heading -->
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-xl text-center font-bold">Menu</h1>
+            <div class="relative">
+                <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.857 17.082a24 24 0 0 0 5.454-1.31A8.97 8.97 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.97 8.97 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.3 24.3 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"/></svg>
+            </div>
+        </div>
+
+        <!-- Special For You Section -->
+        <h2 class="text-xl text-green-600 font-bold mb-2">Special For You</h2>
+
+        <!-- Search Bar -->
+        <div class="mb-4 flex items-center relative">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 absolute left-3" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m21 21l-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607"/></svg>
+            <input type="text" placeholder="Search Your Menus" class="w-full pl-12 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex justify-between text-sm mb-4">
+            <button class="text-gray-500">All</button>
+            <button class="font-bold text-black">Featured</button>
+            <button class="text-gray-500">Top of Week</button>
+            <button class="text-gray-500">Soup</button>
+            <button class="text-gray-500">Seafood</button>
+        </div>
+
+        <!-- Featured Menu Items -->
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Item 1 -->
+            <a href="menu-detail.html" class="bg-white p-4 rounded-md shadow-sm">
+                <img src="https://via.placeholder.com/150" alt="Squid Sweet & Sour" class="w-full h-24 rounded-md object-cover mb-2">
+                <p class="text-sm font-semibold">Squid Sweet & Sour ...</p>
+                <p class="text-green-600 font-semibold">$19.99</p>
+            </a>
+
+            <!-- Item 2 -->
+            <a href="menu-detail.html" class="bg-white p-4 rounded-md shadow-sm">
+                <img src="https://via.placeholder.com/150" alt="Black Pepper Beef" class="w-full h-24 rounded-md object-cover mb-2">
+                <p class="text-sm font-semibold">Black Pepper Beef ...</p>
+                <p class="text-green-600 font-semibold">$27.12</p>
+            </a>
+
+            <!-- Item 3 -->
+            <a href="menu-detail.html" class="bg-white p-4 rounded-md shadow-sm">
+                <img src="https://via.placeholder.com/150" alt="Soup" class="w-full h-24 rounded-md object-cover mb-2">
+                <p class="text-sm font-semibold">Soup</p>
+                <p class="text-green-600 font-semibold">$12.99</p>
+            </a>
+
+            <!-- Item 4 -->
+            <a href="menu-detail.html" class="bg-white p-4 rounded-md shadow-sm">
+                <img src="https://via.placeholder.com/150" alt="Mixed Salad" class="w-full h-24 rounded-md object-cover mb-2">
+                <p class="text-sm font-semibold">Mixed Salad</p>
+                <p class="text-green-600 font-semibold">$15.99</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bottom Navbar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-md p-2 flex justify-around">
+        <a href="home.html" class="flex flex-col items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m2.25 12l8.955-8.955a1.124 1.124 0 0 1 1.59 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
+            <span class="text-xs">Home</span>
+        </a>
+        <a href="menu.html" class="flex flex-col items-center text-green-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6z"/></svg>
+            <span class="text-xs">Menu</span>
+        </a>
+        <a href="cart.html" class="flex flex-col items-center text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.137a60 60 0 0 0-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m12.75 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0"/></svg>
+            <span class="text-xs">Cart</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.9 17.9 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632"/></svg>
+            <span class="text-xs">Profile</span>
+        </a>
+    </nav>
+</body>
+</html>
