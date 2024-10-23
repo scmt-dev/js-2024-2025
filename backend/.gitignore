@@ -1,0 +1,33 @@
+.env
+.env.local
+
+# Ignore Docker-related files and folders
+
+# Docker volumes
+**/db_data/
+
+# Docker log files
+*.log
+*.log.*
+
+# Ignore all containers, images, and other docker runtime files
+.docker/
+docker-compose.override.yml
+
+# Ignore environment variable files
+.env
+
+# Ignore node_modules if using Node.js
+node_modules/
+
+# Ignore package-lock.json if you don't want it committed
+package-lock.json
+
+# Ignore the built files if you're building the project locally
+build/
+dist/
+
+# Ignore other local dev environment specific files
+.DS_Store
+.idea/
+.vscode/

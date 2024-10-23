@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:7.5  # You can change this to any version you prefer
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password  # Set your root password
+      MYSQL_DATABASE: my_database  # Optional: specify a default database
+      MYSQL_USER: user  # Optional: specify a non-root user
+      MYSQL_PASSWORD: user_password  # Optional: specify the password for the non-root user
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"  # Expose MySQL port
+    volumes:
+      - db_data:/var/lib/mysql  # Persist database data
+    networks:
+      - mysql_network
+
+volumes:
+  db_data:  # Named volume for persisting data
+
+networks:
+  mysql_network:
+    driver: bridge
