@@ -1,13 +1,17 @@
 import dotenv from 'dotenv';
 import express from 'express';
+import cors from 'cors'; 
 import { signin, signup } from './controllers/authController.js';
 import { authenticateToken } from './middlewares/authMiddleware.js';
 
 // Load environment variables
 dotenv.config();
 
-const app = express();
+const app = express();1
+
 app.use(express.json());
+// Enable CORS for all routes
+app.use(cors());
 
 // Authentication routes
 app.post('/signup', signup);
