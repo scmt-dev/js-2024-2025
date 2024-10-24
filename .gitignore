@@ -21,4 +21,6 @@ yarn-error.log*
 yarn-debug.log*
 .npm
 
+
+node_modules
 test-results
