@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>BTCUSDT</h1>
+    <h1 id="time"></h1>
+    <div id="btc" style="font-size: 40px; color: green;"></div>
+ 
+    <script>
+        async function getBtcPrice() {
+            const URL = 'https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT'
+            const response = await fetch(URL)
+            const data = await response.json()
+            document.querySelector('#btc').innerHTML = data.price
+            document.querySelector('#time').innerHTML = new Date().toLocaleTimeString()
+        }
+        getBtcPrice()
+        // refresh every 5 seconds
+        setInterval(getBtcPrice, 1000)
+    </script>
+</body>
+</html>
