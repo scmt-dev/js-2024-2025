@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTC Price update</title>
+
+    <style>
+        h1 {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+        h1 span {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <img width="50" src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="">
+        Bitcoin Price
+        <span>(BTC)</span>
+    </h1>
+    <!-- DOM -->
+    <h4 id="time"></h4>
+    <h2 id="price"></h2>
+
+    <script>
+        const time = document.getElementById('time')
+        const price = document.getElementById('price')
+
+        async function getPrice() {
+            const res = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT')
+            const data = await res.json()
+            price.innerHTML = '$' + data.price
+
+            const date = new Date();
+            time.innerHTML = date.toLocaleTimeString();
+        }
+
+        setInterval(() => {
+            getPrice()
+        }, 1000)
+    </script>
+</body>
+</html>
