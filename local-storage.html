@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="saveName()">save</button>
+
+    <script>
+        
+        function saveName() {
+            const nameInput = document.getElementById('name');
+            const name = nameInput.value;
+            localStorage.setItem('name', name);
+            localStorage.setItem('name2', name);
+            sessionStorage.setItem('name', name);
+            nameInput.value = '';
+        }
+
+        const name = localStorage.getItem('name');
+        console.log(name);
+        const nameInput = document.getElementById('name');
+        nameInput.value = name
+
+
+
+    </script>
+
+</body>
+</html>
