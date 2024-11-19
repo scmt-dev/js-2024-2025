@@ -75,7 +75,7 @@ describe('Auth API Tests', () => {
                     email: 'testuser@example.com',
                     password: 'wrongpassword'
                 })
-                .expect(400)
+                .expect(401)
                 .end((err, res) => {
                     if (err) return done(err);
                     expect(res.body).to.have.property('error').eql('Invalid password');
@@ -90,7 +90,7 @@ describe('Auth API Tests', () => {
                     email: 'nonexistentuser@example.com',
                     password: 'testpassword'
                 })
-                .expect(400)
+                .expect(401)
                 .end((err, res) => {
                     if (err) return done(err);
                     expect(res.body).to.have.property('error').eql('User not found');
