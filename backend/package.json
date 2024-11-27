@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
+    "dev": "node app.js",
     "migrate": "node ./migrate.js",
     "test": "mocha --timeout 10000 --exit",
     "posttest": "node cleanupTestData.js"

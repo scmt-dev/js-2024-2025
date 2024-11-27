@@ -40,14 +40,33 @@
                 <label for="password" class="block text-left text-sm font-medium text-gray-700">Password</label>
                 <div class="relative">
                     <input type="password" id="password" name="password" placeholder="Your password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
-                    <button type="button" class="absolute inset-y-0 right-3 flex items-center text-gray-500">
+                    <button
+                     id="togglePassword"
+                     onclick="togglePasswordVisibility()"
+                     type="button" class="absolute inset-y-0 right-3 flex items-center text-gray-500">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2.036 12.322a1 1 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178c.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178"/><path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0"/></g></svg>
                     </button>
                 </div>
             </div>
 
+            <!-- confirm Password Input -->
+            <div class="mb-4">
+                <label for="password2" class="block text-left text-sm font-medium text-gray-700">Confirm Password</label>
+                <div class="relative">
+                    <input type="password" id="password2" name="password" placeholder="Confirm Your password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                    <button onclick="togglePasswordVisibility()"
+                     type="button"
+                      class="absolute inset-y-0 right-3 flex items-center text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M2.036 12.322a1 1 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178c.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178"/><path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0"/></g></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="message" class="p-2 hidden border-l-4 rounded-md my-2 border-green-600 bg-gray-100">
+            </div>
+
             <!-- Register Button -->
-            <button class="w-full bg-green-600 text-white py-2 rounded-md mb-4 font-semibold">Register</button>
+            <button onclick="handleSignUp()" type="button" class="w-full bg-green-600 text-white py-2 rounded-md mb-4 font-semibold">Register</button>
 
             <!-- Sign In Option -->
             <p class="text-center text-gray-500 text-sm">Have an account? <a href="signin.html" class="text-green-600 font-semibold">Sign In</a></p>
@@ -56,5 +75,87 @@
             <p class="text-center text-gray-400 text-sm mt-4">By clicking Register, you agree to our <a href="#" class="text-green-600">Terms and Data Policy.</a></p>
         </form>
     </div>
+
+    <script>
+
+        function _id(id) {
+            return document.getElementById(id)
+        }
+
+        function handleSignUp() {
+            const name = _id('name').value
+            const email = _id('email').value
+            const password = _id('password').value
+            const confirmPassword = _id('password2').value
+            const message = _id('message')
+            // hide message after 3s
+            setTimeout(() => {
+                message.classList.add('hidden')
+            }, 3000)
+            if(!name){
+                message.classList.remove('hidden')
+                message.classList.add('text-red-600')
+                message.classList.add('border-red-600')
+                message.innerText = 'please input name'
+                return
+            }
+            if(!email){
+                message.classList.remove('hidden')
+                message.classList.add('text-red-600')
+                message.innerText = 'please input email'
+                return
+            }
+
+            if(!password){
+                message.classList.remove('hidden')
+                message.classList.add('text-red-600')
+                message.innerText = 'please input password'
+                return
+            }
+
+            if(password != confirmPassword) {
+                message.classList.remove('hidden')
+                message.classList.add('text-red-600')
+                message.innerText = 'confirm password not match'
+                return
+            }
+
+            fetch('http://localhost:4000/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password
+                })
+            }).then((res) => {
+                if(res.status == 201) {
+                    message.classList.remove('hidden')
+                    message.classList.remove('text-red-600')
+                    message.classList.add('text-green-600')
+                    message.innerText = 'Sign up success'
+                }else {
+                    message.classList.remove('hidden')
+                    message.classList.add('text-red-600')
+                    message.innerText = 'Sign up failed, user already exists!'
+                }
+            })
+        }
+
+        function togglePasswordVisibility() {
+            const password = _id('password');
+            const password2 = _id('password2');
+            if (password.type === 'password') {
+                password.type = 'text';
+                password2.type = 'text';
+            } else {
+                password.type = 'password';
+                password2.type = 'password';
+            }
+        }
+
+    </script>
 </body>
 </html>

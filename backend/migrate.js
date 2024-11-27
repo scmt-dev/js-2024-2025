@@ -2,6 +2,9 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import fs from 'fs';
 import mysql from 'mysql2';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Create equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
