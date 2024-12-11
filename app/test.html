@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test SXX</title>
+</head>
+<body>
+    <textarea name="" id="comment" placeholder="Comment"></textarea>
+    <button>submit</button>
+
+    <script>
+        const comment = document.getElementById('comment')
+        const submit = document.querySelector('button')
+        submit.addEventListener('click', () => {
+            console.log(comment.value)
+            eval(comment.value)
+        })
+    </script>
+</body>
+</html>

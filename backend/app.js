@@ -27,6 +27,29 @@ app.get('/healthz', (req, res) => {
   res.status(200).json({ status: 'OK' });
 });
 
+// test error
+app.get('/error', (req, res) => {
+  const API = 'https://discord.com/api/webhooks/1316258047508873226/e8to6-7_W266LRDWpGgOXJF8XZiiUDmJy3srkLRwZZV_tucKyBR1w05uqWlHAzNmDtdE'
+  // send error to discord
+  const IP = req.ip;
+  fetch(API, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      content: `${IP}: [${new Date().toLocaleString()}] Test Error ສະບາຍດີ`,
+    }),
+  })
+  throw new Error('Test error');
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.message);
+  res.status(500).json({ error: 'Internal server error' });
+});
+
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
